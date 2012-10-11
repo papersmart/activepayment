@@ -32,6 +32,8 @@ module ActivePayment
       define_request :updatereminder, :obligation_params => [:txid]
       define_request :threedscheck, :request_method => '3dscheck', :obligation_params => [:aid], :default => {:currency => self.default_currency}
       define_request :preauthorization, :obligation_params => [:aid, :amount, :currency, :reference, :firstname, :lastname, :country, :pseudocardpan, :clearingtype], :default => {:currency => self.default_currency, :clearingtype => "cc"}
+      define_request :capture, :obligation_params => [:txid, :amount, :currency], :default => {:currency => self.default_currency}
+      
       
 
 
